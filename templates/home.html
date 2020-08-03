@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+<h1>Weather Dashboard</h1>
+<form action="{{ url_for('render_results') }}" method="post">
+    <p>Location Zip Code: <input type="text" name="zip_code" placeholder="Zip code" aria-placeholder="Zip code"></p>
+    <!-- <p>Country (CODE): <input type="text" name="country" placeholder="Country Iso Code" aria-placeholder="Country Iso Code"></p> -->
+    <p>Country (CODE): <select name="country" id="country"  placeholder="Country Iso Code" aria-placeholder="Country Iso Code">>
+        <option value="FR">France</option>
+        <option value="US">USA</option>
+    </select>
+    <!--    <input type="text" name="country" placeholder="Country Iso Code" aria-placeholder="Country Iso Code">-->
+    </p>
+    <p><button type="submit">Search</button></p>
+</form>
+</body>
+</html>
