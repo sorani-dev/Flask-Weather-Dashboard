@@ -12,12 +12,19 @@
 <form action="{{ url_for('render_results') }}" method="post">
     <p>Location Zip Code: <input type="text" name="zip_code" placeholder="Zip code" aria-placeholder="Zip code"></p>
     <!-- <p>Country (CODE): <input type="text" name="country" placeholder="Country Iso Code" aria-placeholder="Country Iso Code"></p> -->
-    <p>Country (CODE): <select name="country" id="country"  placeholder="Country Iso Code" aria-placeholder="Country Iso Code">>
+    <p>Country: <select name="country" id="country"  placeholder="Select Country" aria-placeholder="Select Country">>
         <option value="FR">France</option>
         <option value="US">USA</option>
     </select>
     <!--    <input type="text" name="country" placeholder="Country Iso Code" aria-placeholder="Country Iso Code">-->
     </p>
+        <p>Country (CODE): <select name="unit" id="unit"  placeholder="Select Unit Format" aria-placeholder="Select Unit Format">>
+        <option value="metric">Celcius</option>
+        <option value="imperial">Fahrenheit</option>
+        <option value="">Kelvin</option>
+    </select>
+        </p>
+    <p>Language: <select name="lang"><option value="fr">Français</option><option value="en">English</option></select></p>
     <p><button type="submit">Search</button></p>
 </form>
 </body>

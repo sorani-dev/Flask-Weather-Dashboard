@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Results for {{ location }}<</title>
+</head>
+<body>
+<h1>Results for {{ location }}</h1>
+<div>
+    <p>{{ temp }}° {{ unit }}</p>
+    <p>{{ weather_desc|title }}</p>
+    <p>Feels like: {{ feels_like }}</p>
+    <p>Wind:
+        <ul>
+            <li>Speed: {{ wind.speed}}{{ unit }}</li>
+            <li>Gust: {{ wind.gust}}{{ unit }}</li>
+        </ul>
+    </p>
+    <p>Last updated UTC: {{ time_retreived }}</p>
+    <p>Last updated in local time: {{ time_retreived_local }}</p>
+</div>
+</body>
+</html>
