@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato/Lato-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato/Lato-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: 700;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', 'sans-serif';
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 5px auto;
+    font-size: 24px;
+    padding: 20px;
+    border-radius: 10px;
+    /* display: inline-block; */
+}
+
+h1 {
+    /* font-family: 'sans-serif';
+    font-size: 24px; */
+    /* padding-left: 20px; */
+    text-align: center;
+}
+
+.weather-results {
+    background-color: #fa8072;
+}
+
+.weather-items {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+
+
+ol, ul {
+    margin-bottom: 10px;
+}
+
+.weather-items li {
+    margin-right: 16px;
+    /* display: flex; */
+    /* align-items: center; */
+    /* flex-direction: column;
+    justify-content: start;
+    flex-wrap: nowrap; */
+    padding-bottom: 1rem;
+}

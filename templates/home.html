@@ -6,26 +6,29 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}" type="text/css">
 </head>
 <body>
-<h1>Weather Dashboard</h1>
-<form action="{{ url_for('render_results') }}" method="post">
-    <p>Location Zip Code: <input type="text" name="zip_code" placeholder="Zip code" aria-placeholder="Zip code"></p>
-    <!-- <p>Country (CODE): <input type="text" name="country" placeholder="Country Iso Code" aria-placeholder="Country Iso Code"></p> -->
-    <p>Country: <select name="country" id="country"  placeholder="Select Country" aria-placeholder="Select Country">>
+<div class="container">
+    <h1 class="weather-text">Weather Dashboard</h1>
+<form class="weather-form" action="{{ url_for('render_results') }}" method="post">
+    <p>Location Zip Code: <input class="weather-input" type="text" name="zip_code" placeholder="Zip code" aria-placeholder="Zip code"></p>
+    <!-- <p>Country (CODE): <input class=weather-input" type="text" name="country" placeholder="Country Iso Code" aria-placeholder="Country Iso Code"></p> -->
+    <p>Country: <select class="weather-input" name="country" id="country"  placeholder="Select Country" aria-placeholder="Select Country">>
         <option value="FR">France</option>
         <option value="US">USA</option>
     </select>
     <!--    <input type="text" name="country" placeholder="Country Iso Code" aria-placeholder="Country Iso Code">-->
     </p>
-        <p>Country (CODE): <select name="unit" id="unit"  placeholder="Select Unit Format" aria-placeholder="Select Unit Format">>
+        <p>Temperature unit: <select class="weather-input" name="unit" id="unit"  placeholder="Select Unit Format" aria-placeholder="Select Unit Format">>
         <option value="metric">Celcius</option>
         <option value="imperial">Fahrenheit</option>
         <option value="">Kelvin</option>
     </select>
         </p>
-    <p>Language: <select name="lang"><option value="fr">Français</option><option value="en">English</option></select></p>
-    <p><button type="submit">Search</button></p>
+    <p>Language: <select class="weather-input" name="lang"><option value="fr">Français</option><option value="en">English</option></select></p>
+    <p><button class="weather-submit" btype="submit">Search</button></p>
 </form>
+</div>
 </body>
 </html>
