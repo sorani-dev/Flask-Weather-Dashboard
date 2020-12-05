@@ -72,6 +72,12 @@ def get_weather_results(zip_code, country_code, api_key, unit='', lang='en'):
     response = requests.get(api_url)
     return response.json()
 
+def get_weather_uv(coords_lat, coords_long, api_key):
+
+    api_url = "http://api.openweathermap.org/data/2.5/uvi?appid={}&lat={}&lon={}".format(api_key, coords_lat, coords_long)                                                                                        
+    print('uv_api_url:', api_url)
+    response = requests.get(api_url)
+    return response.json()
 
 app = Flask(__name__)
 
@@ -106,7 +112,9 @@ def render_results():
     # get the data from the API
     data = get_weather_results(zip_code=zip_code, country_code=country, api_key=get_api_key(), unit=unit, lang=lang)
 
+    data_uv = get_weather_uv(coords_lat=data['coord']['lat'],coords_long=data['coord']['lon'], api_key=get_api_key())
     print(data)
+    print(data_uv)
 
     # parse data
     temp = "{0:.2f}".format(data['main']['temp'])
@@ -140,6 +148,7 @@ def render_results():
         'sunset': convert_utc_to_local(data['sys']['sunset'], time_difference),
         'visibility': data['visibility']/1000,
         'visibility_unit': visibility_unit,
+        'uv': data_uv,
     }
 
     print(wind)
